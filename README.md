@@ -4,6 +4,7 @@
 4. the list of countries an dcurrency are obtained from SOAP request in the User model.
 5. The unit test of models is done using rspec
 6. jquery ajax is used to implement various funtionalities like search currencies, search countries, update currency count ,update countries visited .
+
 7.saas rails is used for stying purpose
 8.google charts are used for  graphs.
 
