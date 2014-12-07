@@ -1,0 +1,2 @@
+module UserCurrenciesHelper
+end

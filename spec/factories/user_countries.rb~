@@ -1,0 +1,9 @@
+FactoryGirl.define do
+  factory :user_country do
+    user_id 1
+name "MyString"
+code "MyString"
+visited false
+  end
+
+end

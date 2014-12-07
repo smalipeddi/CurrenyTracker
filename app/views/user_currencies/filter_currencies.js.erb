@@ -1,0 +1,3 @@
+$("#currency_list").html('<%= escape_javascript(render('currency_list')) %>'); 
+
+$("#currency_pie_chart_div").html('<%= escape_javascript(render('charts', :currencies=>@user_currencies)) %>');  

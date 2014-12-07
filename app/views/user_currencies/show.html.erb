@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+ 
+<p>
+  <strong>Name:</strong>
+  <%= @user_currency.name %>
+</p>
+
+<p>
+  <strong>Code:</strong>
+  <%= @user_currency.code %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @user_currency.country_id %>
+</p>
+
+<p>
+  <strong>Collected:</strong>
+  <%= @user_currency.collected_currency(current_user.id) ? 'Collected' : 'Not Collected' %>
+</p> 
+
+<%= link_to 'Edit', edit_user_currency_path(@user_currency) %> |
+<%= link_to 'Back', user_currencies_path %>

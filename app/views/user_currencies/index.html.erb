@@ -1,0 +1,10 @@
+<h3>Currencies</h3>
+<%= text_field_tag :search_text, "", onkeyup: "searchCurrencies(this);", :placeholder=>"Enter text to filter", :class=>"form-control", :style=>"width:300px;display:inline;" %>
+
+<div id="select_all_checkbox">
+	<%= render "select_all_checkbox" %>
+</div>
+
+<div id="currency_list">
+	<%= render "currency_list" %>
+</div>

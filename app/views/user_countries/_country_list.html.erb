@@ -1,0 +1,24 @@
+<%= render "charts", :countries=>@user_countries %> 
+
+<table class="table table-bordered">
+  <thead>
+    <tr> 
+      <th>Name</th>
+      <th>Code</th> 
+      <th>Visited</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user_countries.each do |user_country| %>
+      <tr> 
+        <td><%= user_country.name %></td>
+        <td><%= user_country.code %></td> 
+        <td><%=check_box_tag 'countries[][visited]', user_country.visited?, user_country.visited? ? user_country.visited : false, :onclick => "onUpdateVisited('#{user_country.id}', this);", :class=>"countries_visited" %> </td>
+        <td><%= link_to 'Show', user_country %></td>
+        <td><%= link_to 'Edit', edit_user_country_path(user_country) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table> 

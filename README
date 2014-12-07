@@ -1,0 +1,15 @@
+Currency Tracker
+
+Instructions
+
+TO run the application do,
+
+
+bundle install
+rake db:create
+rake db:migrate
+
+Signup to application, which will create the countries, currencies to that user,(getting currerncy & country data using savon gem, i.e. from http://www.webservicex.net/country.asmx?WSDL as like it was in github project, Looks sometimes http://www.webservicex.net/country.asmx?WSDL is down due to heavy traffic which may fail user signup process, if this happens please try again to sign up )
+
+
+

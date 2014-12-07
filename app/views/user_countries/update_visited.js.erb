@@ -1,0 +1,14 @@
+if('<%=params[:country_code]%>' == "update_all")
+{
+	$.each($(".countries_visited"), function(index, country_checkbox){    
+		$(country_checkbox).prop('checked', <%=params[:visited]%>);
+	});
+} 
+
+$("#country_pie_chart_div").html('<%= escape_javascript(render('charts', :countries=>@user_countries)) %>'); 
+$("#select_all_checkbox").html('<%= escape_javascript(render('select_all_checkbox')) %>'); 
+
+
+
+	 
+

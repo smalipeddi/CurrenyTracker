@@ -1,0 +1,9 @@
+if('<%=params[:country_code]%>' == "update_all")
+{
+	$.each($(".currencies_visited"), function(index, currency_checkbox){    
+		$(currency_checkbox).prop('checked', <%=params[:visited]%>);
+	});
+}
+    
+$("#currency_pie_chart_div").html('<%= escape_javascript(render('charts', :currencies=>@user_currencies)) %>'); 
+$("#select_all_checkbox").html('<%= escape_javascript(render('select_all_checkbox')) %>'); 

@@ -1,0 +1,55 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+.chartClass{
+  float: right; 
+  position: relative;
+  right:-30px;
+  margin-top:-95px;
+}
+
+#progress{
+  display:none;
+  /*background:#2b6db1 url('/assets/progress_back.png') repeat-x scroll left top;*/
+  color:#333;
+  font-size:130%;
+
+  left:45%;
+  padding:10px 0 15px;
+  position:fixed;
+  text-align:center;
+  top: 0;
+  width: 200px;
+  font-weight:bold;
+  -moz-border-radius-bottomleft: 15px;
+  -moz-border-radius-bottomright:15px;
+  -webkit-border-bottom-left-radius: 15px;
+  -webkit-border-bottom-right-radius: 15px;
+  border: 1px solid #0b6191;
+  border-top: none;
+  background: #fff;
+  z-index: 1000010;
+} 
+
+#select_all_checkbox
+{
+  display:inline-block;
+}
+
+#country_select_all_checkbox
+{
+  display:inline-block;
+}

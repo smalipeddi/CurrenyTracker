@@ -1,0 +1,44 @@
+<div class="chartClass" style="display: inline-block">
+	<div id="country_line_chart_div" style="width:350px;height: 150px;display: inline-block"></div>
+	<div id="country_pie_chart_div" style="width:350px;height: 150px;display: inline-block"></div>
+</div>
+ 
+
+<script>
+	function drawCountryPieChart(){ 
+		var pie_chart_data = google.visualization.arrayToDataTable([
+			["Country", "Visited"],
+			["Visited", <%= countries.visited.count %>],
+			["Not Visited", <%= countries.not_visited.count %>]
+		]); 
+
+		var options = {
+			title : "Country details",
+			pieSliceText : "none",
+			is3D : true
+		};
+		var pie_chart = new google.visualization.PieChart(document.getElementById("country_pie_chart_div"));
+		pie_chart.draw(pie_chart_data, options);
+	}
+	
+	function drawCountryLineChart(){
+		var data = google.visualization.arrayToDataTable([ 
+		      ['Date', 'Visited'],  
+		      ['2012',  <%= countries.visited.visited_in_year(2012).count %>],
+		      ['2013',  <%= countries.visited.visited_in_year(2013).count %>],
+		      ['2014',  <%= countries.visited.visited_in_year(2014).count %>] 
+		]);
+
+		var options = {
+	    title: 'Currency Collected Performance',
+	    curveType: 'function',
+	    legend: { position: 'bottom' }
+	  };
+
+		var chart = new google.visualization.LineChart(document.getElementById("country_line_chart_div"));
+		chart.draw(data, options);
+	}
+	
+	
+	$(function(){drawCountryLineChart();drawCountryPieChart();});
+</script>

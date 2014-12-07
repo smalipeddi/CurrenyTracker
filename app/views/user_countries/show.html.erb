@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+ 
+<p>
+  <strong>Name:</strong>
+  <%= @user_country.name %>
+</p>
+
+<p>
+  <strong>Code:</strong>
+  <%= @user_country.code %>
+</p>
+
+<p>
+  <strong>Visited:</strong>
+  <%= @user_country.visited? ? 'Visited' : 'Not Visited' %>
+</p> 
+
+<%= link_to 'Edit', edit_user_country_path(@user_country) %> |
+<%= link_to 'Back', user_countries_path %>

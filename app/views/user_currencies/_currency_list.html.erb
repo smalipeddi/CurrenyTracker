@@ -1,0 +1,27 @@
+ <%= render "charts", :currencies=>@user_currencies %> 
+ 
+<table class="table table-bordered">
+  <thead>
+    <tr> 
+      <th>Name</th>
+      <th>Code</th>
+      <th>Country</th> 
+      <th>Collected</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user_currencies.each do |user_currency| %>
+      <tr> 
+        <td><%= user_currency.name %></td>
+        <td><%= user_currency.code %></td>
+        <td><%= link_to user_currency.try(:user_country).try(:name), user_currency.try(:user_country) %></td> 
+        <td><%=check_box_tag 'Collect', current_user.get_collected_currency(user_currency.country_id), current_user.get_collected_currency(user_currency.country_id), :onclick => "onUpdateCurrencycollected('#{user_currency.try(:user_country).try(:code)}', this);", :class=>"currencies_visited" %> </td>
+
+        <td><%= link_to 'Show', user_currency %></td>
+        <td><%= link_to 'Edit', edit_user_currency_path(user_currency) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
