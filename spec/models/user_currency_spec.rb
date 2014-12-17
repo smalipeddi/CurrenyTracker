@@ -15,4 +15,12 @@ RSpec.describe UserCurrency, :type => :model do
        FactoryGirl.build(:UserCurrency, :code => "").should_not be_valid
    end
 
+   it "should require a name" do
+       FactoryGirl.build(:UserCurrency, :name => "Dollar").should be_valid
+   end
+
+   it "should require a code" do
+       FactoryGirl.build(:UserCurrency, :code => "AUD").should be_valid
+   end
+
 end
